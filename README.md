@@ -85,5 +85,10 @@ Leveraged native tools (Workbench, pgAdmin, psql) effectively
 
 Demonstrated hands-on understanding of real-world data pipelines
 
+## 📌 Author
+
+Developed by [Syeda Alia Samia](https://github.com/aliasyeda)
+
+
 
 
