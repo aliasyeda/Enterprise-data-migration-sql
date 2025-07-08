@@ -53,32 +53,30 @@ It showcases database creation, table schema definition, data import operations,
 2. Execute `MySQL_to_PostgreSQL_Migration.sql`
 3. Use built-in import tool or `LOAD DATA INFILE` if supported
 4. Validate:
-   ```sql
-   SELECT * FROM users;
+5. SELECT * FROM users;
+
 ✅ In PostgreSQL (via psql terminal)
+
 Create the database (migrate_db_pg)
 
 Connect to it using terminal:
 
-bash
-Copy
-Edit
+
 psql -U postgres -d migrate_db_pg
 Create the table using MigrateDB_Postgres.sql or manually
 
 Import data:
 
-sql
-Copy
-Edit
+
 \copy users(user_id, name, email, age) FROM 'path/to/user.csv' DELIMITER ',' CSV HEADER;
 Validate:
 
-sql
-Copy
-Edit
+
 SELECT * FROM users;
+
+
 ✅ Key Takeaways
+
 Migrated structured data into two relational DBMS platforms
 
 Applied SQL best practices for schema definition and data integrity
