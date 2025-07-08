@@ -1,6 +1,6 @@
 # Enterprise-data-migration-sql
 
-# Enterprise Data Migration using SQL (MySQL & PostgreSQL)
+Enterprise Data Migration using SQL (MySQL & PostgreSQL)
 
 This project demonstrates a structured and professional approach to migrating tabular data from a CSV source file into two relational database systems — **MySQL** and **PostgreSQL** — using SQL.
 
@@ -23,12 +23,12 @@ It showcases database creation, table schema definition, data import operations,
 
 ## 🗂️ Repository Structure
 
-| File Name               | Description                                                |
-|-------------------------|------------------------------------------------------------|
-| `user.csv`              | Sample dataset used for import                             |
-| `mysql_migration.sql`   | SQL script for table creation and import in MySQL          |
-| `postgres_migration.sql`| SQL script + `\copy` instructions for PostgreSQL migration |
-| `README.md`             | Project documentation and migration steps overview         |
+| File Name                         | Description                                                |
+|----------------------------------|------------------------------------------------------------|
+| `user.csv`                       | Sample dataset used for import                             |
+| `MySQL_to_PostgreSQL_Migration.sql` | SQL script for table creation and import in MySQL          |
+| `MigrateDB_Postgres.sql`         | SQL script + `\copy` instructions for PostgreSQL migration |
+| `README.md`                      | Project documentation and migration steps overview         |
 
 ---
 
@@ -50,8 +50,42 @@ It showcases database creation, table schema definition, data import operations,
 ### ✅ In MySQL Workbench
 
 1. Create the database
-2. Execute `mysql_migration.sql`
+2. Execute `MySQL_to_PostgreSQL_Migration.sql`
 3. Use built-in import tool or `LOAD DATA INFILE` if supported
 4. Validate:
    ```sql
    SELECT * FROM users;
+✅ In PostgreSQL (via psql terminal)
+Create the database (migrate_db_pg)
+
+Connect to it using terminal:
+
+bash
+Copy
+Edit
+psql -U postgres -d migrate_db_pg
+Create the table using MigrateDB_Postgres.sql or manually
+
+Import data:
+
+sql
+Copy
+Edit
+\copy users(user_id, name, email, age) FROM 'path/to/user.csv' DELIMITER ',' CSV HEADER;
+Validate:
+
+sql
+Copy
+Edit
+SELECT * FROM users;
+✅ Key Takeaways
+Migrated structured data into two relational DBMS platforms
+
+Applied SQL best practices for schema definition and data integrity
+
+Leveraged native tools (Workbench, pgAdmin, psql) effectively
+
+Demonstrated hands-on understanding of real-world data pipelines
+
+
+
